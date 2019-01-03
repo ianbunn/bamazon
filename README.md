@@ -14,6 +14,14 @@ The `seeds.sql` file contains the mock-up data to start populating the `products
 
 ## NPM dependencies
 
+If you want to start a `package.json` file, run the following command and follow the prompts in the CLI:
+
+```shell
+npm init
+```
+
+The `package.json` file will save your project details along with development dependencies.
+
 bamazon uses the following npm packages:
 
 - `mysql`

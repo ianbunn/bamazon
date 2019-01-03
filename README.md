@@ -20,7 +20,7 @@ If you want to start a `package.json` file, run the following command and follow
 npm init
 ```
 
-The `package.json` file will save your project details along with development dependencies.
+The `package.json` file will save your project details along with development dependencies (npm packages).
 
 bamazon uses the following npm packages:
 

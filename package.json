@@ -1,0 +1,34 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An Amazon-like storefront app for CLI using Node.js and MySQL. App takes in orders from customers, and depletes the stock from the store's inventory (products table). App also tracks product sales across store's department and provides a summary of the highest-grossing departments in bamazon store.",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ianbunn/bamazon.git"
+  },
+  "keywords": [
+    "bamazon",
+    "MySQL",
+    "Node.js",
+    "database",
+    "department",
+    "store",
+    "deparment",
+    "store",
+    "sales"
+  ],
+  "author": "irb__",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ianbunn/bamazon/issues"
+  },
+  "homepage": "https://github.com/ianbunn/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mysql": "^2.16.0"
+  }
+}

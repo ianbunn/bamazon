@@ -26,6 +26,7 @@ bamazon uses the following npm packages:
 
 - `mysql`
 - `inquirer`
+- `cli-table`
 
 To install `mysql` run the following command:
 
@@ -38,3 +39,21 @@ To install `inquirer` run the following command:
 ```shell
 npm install inquirer
 ```
+
+To install `cli-table` run the following command:
+
+```shell
+npm install cli-table
+```
+
+## Running bamazon! for Customers
+
+To run bamazon! and start buying some dank products, run the following command in the command line interface:
+
+```shell
+node bamazonCustomer
+```
+
+This will trigger the following interaction:
+
+[INSERT GIF HERE](www.yahoo.com)

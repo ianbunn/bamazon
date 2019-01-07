@@ -102,5 +102,9 @@ function afterConnection(){
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
         })
+        connection.query(`SELECT * FROM products WHERE item_id = ${stockItemId}`, function(err,newLoad){
+            if (err) throw err;
+            console.log(`The new quantity for your ${newLoad[0].product_name} is ${newLoad[0].stock_quantity} units`);
+        })
     }
 };

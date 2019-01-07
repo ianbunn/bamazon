@@ -57,3 +57,15 @@ node bamazonCustomer
 This will trigger the following interaction:
 
 [INSERT GIF HERE](www.yahoo.com)
+
+## Running bamazon! for Managers
+
+To run bamazon! for manager functions, run the following command in the command line interface:
+
+```shell
+node bamazonManager
+```
+
+This will trigger the following interaction:
+
+[INSERT GIF HERE](www.yahoo.com)

@@ -44,7 +44,7 @@ function afterConnection(){
         }
 
         console.log(table.toString());
-        
+
         userPurchase();
     }
 
@@ -75,9 +75,7 @@ function afterConnection(){
                             var itemIdProductsArr = itemDetails.itemId - 1;
                             var itemId = itemDetails.itemId
                             var itemQ = itemDetails.itemQuantity;
-                            
                             checkInventory(itemIdProductsArr,itemQ,itemId);
-                            updateInventory(itemId,newQ);
                             connection.end();
                         })
                 }
@@ -89,20 +87,20 @@ function afterConnection(){
 
     function checkInventory(itemIdProductsArr,itemQ){
         if (itemIdProductsArr in products && itemQ <= products[itemIdProductsArr].stock_quantity) {
-            var totalSale = parseFloat(products[itemIdProductsArr].price * itemQ);
-            newQ = parseInt(products[itemIdProductsArr].stock_quantity - itemQ)
+            var totalSale = parseFloat(products[itemIdProductsArr].price * itemQ).toFixed(2);
+            var newQ = parseInt(products[itemIdProductsArr].stock_quantity - itemQ);
             var stockItemId = itemIdProductsArr + 1;
             console.log(`Your total is $${totalSale}. Put that cash in my hand!`)
             updateInventory(stockItemId,newQ);
         } else {
-            console.log("We ain't got what you need!")
+            console.log("We ain't got the quantity you need!")
         }
     }
 
     function updateInventory(stockItemId,newQ){
-        connection.query(`UPDATE products SET stock_quantity = ${newQ} WHERE item_id = ${stockItemId}`, function (err, response) {
+        connection.query(`UPDATE products SET stock_quantity = ${newQ} WHERE item_id = ${stockItemId}`, function (err,result) {
             if (err) throw err;
-            console.log(response);
+            console.log(result.affectedRows + " record(s) updated");
         })
     }
 };

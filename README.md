@@ -56,7 +56,7 @@ node bamazonCustomer
 
 This will trigger the following interaction:
 
-![node bamazonCustoner](www.yahoo.com)
+![node bamazonCustoner](https://github.com/ianbunn/bamazon/blob/master/assets/images/bamazonCustomer.gif)
 
 ## Running bamazon! for Managers
 
@@ -66,6 +66,10 @@ To run bamazon! for manager functions, run the following command in the command 
 node bamazonManager
 ```
 
-This will trigger the following interaction:
+This will trigger the following interaction to view all the inventory, view ONLY LOW inventory, and add inventory:
 
-[INSERT GIF HERE](www.yahoo.com)
+![node bamazonManager](https://github.com/ianbunn/bamazon/blob/master/assets/images/bamazonManager.gif)
+
+![node bamazonManager2](https://github.com/ianbunn/bamazon/blob/master/assets/images/bamazonManager2.gif)
+
+![node bamazonManager3](https://github.com/ianbunn/bamazon/blob/master/assets/images/bamazonManager3.gif)

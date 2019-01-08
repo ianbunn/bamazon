@@ -56,7 +56,7 @@ node bamazonCustomer
 
 This will trigger the following interaction:
 
-[INSERT GIF HERE](www.yahoo.com)
+![node bamazonCustoner](www.yahoo.com)
 
 ## Running bamazon! for Managers
 

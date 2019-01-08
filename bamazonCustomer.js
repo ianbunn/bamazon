@@ -4,13 +4,9 @@ var Table = require('cli-table');
 
 var connection = mysql.createConnection({
     host: "localhost",
-    // Your port; if not 3306
     port: 8889,
-    // Your username
     user: "root",
-    // Your password
     password: "root",
-    // Your db name
     database: "bamazon"
 });
 
@@ -29,27 +25,22 @@ function afterConnection(){
     });
 
     function lookUpProducts (){
-        
         // instantiate
         var table = new Table({
             head: ['Item ID', 'Item Name', 'Item Price']
             , colWidths: [9, 50, 15]
         });
-
         for (v in products) {
             // table is an Array, so you can `push`, `unshift`, `splice` and friends
             table.push(
                 [products[v].item_id, products[v].product_name, products[v].price]
             );
         }
-
         console.log(table.toString());
-
         userPurchase();
     }
 
     function userPurchase (){
-        
         //inquire if user'd like to buy something
         inquirer
             .prompt({
@@ -71,12 +62,11 @@ function afterConnection(){
                             type: "input",
                             message: "How many items would you like?"
                         }]).then(function(itemDetails){
-                            // this is where i'm starting to get the wrong item id to make sure that i get the right one, but how do i get the right one?
                             var itemIdProductsArr = itemDetails.itemId - 1;
                             var itemId = itemDetails.itemId
                             var itemQ = itemDetails.itemQuantity;
                             checkInventory(itemIdProductsArr,itemQ,itemId);
-                            connection.end();
+                            // connection.end();
                         })
                 }
                 else {
@@ -91,20 +81,21 @@ function afterConnection(){
             var newQ = parseInt(products[itemIdProductsArr].stock_quantity - itemQ);
             var stockItemId = itemIdProductsArr + 1;
             console.log(`Your total is $${totalSale}. Put that cash in my hand!`)
-            updateInventory(stockItemId,newQ);
+            updateInventory(stockItemId,newQ,totalSale);
         } else {
             console.log("We ain't got the quantity you need!")
         }
     }
 
-    function updateInventory(stockItemId,newQ){
+    function updateInventory(stockItemId,newQ,itemQ,totalSale){
         connection.query(`UPDATE products SET stock_quantity = ${newQ} WHERE item_id = ${stockItemId}`, function (err,result) {
             if (err) throw err;
             console.log(result.affectedRows + " record(s) updated");
         })
         connection.query(`SELECT * FROM products WHERE item_id = ${stockItemId}`, function(err,newLoad){
             if (err) throw err;
-            console.log(`The new quantity for your ${newLoad[0].product_name} is ${newLoad[0].stock_quantity} units`);
+            console.log(`The new quantity for ${newLoad[0].product_name} is ${newLoad[0].stock_quantity} units`);
+            connection.end();
         })
     }
 };

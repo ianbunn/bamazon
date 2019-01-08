@@ -4,7 +4,7 @@ bamazon is a `node.js` and `mysql` CLI app
 
 An Amazon-like storefront app for CLI using `node.js` and `mysql`. App takes in orders from customers, and depletes the stock from the store's inventory (`products` table).
 
-App also tracks product sales across store's department and provides a summary of the highest-grossing departments in bamazon store.
+App also allows store manager to view all inventory, view low inventory, add more inventory, or add a whole new product!
 
 ## MySQL Database Schema
 

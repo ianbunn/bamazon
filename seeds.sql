@@ -12,3 +12,5 @@ VALUES
 ("Yoda OG", "Hollistic Medicine", 40.00, 100),
 ("Strawnana", "Hollistic Medicine", 40.00, 50),
 ("Mushroom Coffee", "Beverages", 12.99, 50);
+
+UPDATE products SET product_sales = 0
